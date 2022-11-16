@@ -5,6 +5,12 @@
   position: relative;
   @include display-flex($justify: auto);
   background: linear-gradient(to right, $white 50%, $beige 50%);
+  transition: all 1s ease;
+  opacity: 0;
+
+  &.page-loaded {
+    opacity: 1;
+  }
 
   a.right-cover {
     position: absolute;
@@ -158,8 +164,29 @@
       position: relative;
       z-index: 2;
 
+      h2 {
+        overflow: hidden;
+
+        span {
+          font-family: inherit;
+          display: inline-block;
+          transition: all 1s ease;
+          transform: translateY(100%);
+
+          &.show {
+            transform: translateY(0);
+          }
+        }
+      }
+
       p {
         margin: 20px 0;
+        opacity: 0;
+        transition: all 1s ease;
+
+        &.show {
+          opacity: 1;
+        }
       }
     }
   }

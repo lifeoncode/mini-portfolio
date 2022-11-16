@@ -12,6 +12,8 @@ window.addEventListener("load", () => {
     setTimeout(() => {
       document.querySelector("#loading").classList.add("hide");
       document.querySelector("#loading").classList.remove("page-loaded");
+      // show header
+      document.querySelector("#header").classList.add("page-loaded");
     }, 1000);
   }, 3000);
 
@@ -63,8 +65,29 @@ window.addEventListener("load", () => {
 
   // parallax work images
   window.addEventListener("scroll", (e) => {
+    let scrollPosition = window.pageYOffset;
+
+    if (window.screen.height >= 430) {
+      if (scrollPosition >= 340) {
+        document.querySelector("#about span").classList.add("show");
+        document.querySelector("#about p").classList.add("show");
+      } else {
+        document.querySelector("#about span").classList.remove("show");
+        document.querySelector("#about p").classList.remove("show");
+      }
+    }
+
+    if (window.screen.height >= 760) {
+      if (scrollPosition >= 450) {
+        document.querySelector("#about span").classList.add("show");
+        document.querySelector("#about p").classList.add("show");
+      } else {
+        document.querySelector("#about span").classList.remove("show");
+        document.querySelector("#about p").classList.remove("show");
+      }
+    }
+
     if (window.screen.width > 800) {
-      let scrollPosition = window.pageYOffset;
       workImages.forEach((image) => {
         let scrollRate = image.dataset.rate * (scrollPosition / 4);
         image.style.transform = `translateY(${scrollRate}px)`;

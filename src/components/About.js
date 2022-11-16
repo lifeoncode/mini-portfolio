@@ -10,7 +10,9 @@ const About = () => {
           className="pie"
         />
         <div className="text">
-          <h2>A bit about me</h2>
+          <h2>
+            <span>A bit about me</span>
+          </h2>
           <p className="big-text">
             I like to keep things simple, but interesting. I hope this UI
             conveys that about me. I feel very fortunate to have the opportunity
