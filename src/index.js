@@ -22,6 +22,55 @@ window.addEventListener("load", () => {
     let yPos = e.pageY;
     cursor.setAttribute("style", `left:${xPos}px; top:${yPos}px`);
   });
+
+  // when hovering on deco space
+  const rightSpace = document.querySelector(".right-cover");
+  rightSpace.addEventListener("mouseover", (e) => {
+    cursor.classList.add("deco-space");
+    cursor.innerHTML = '<i class="fa-solid fa-arrow-down-long"></i>';
+  });
+
+  rightSpace.addEventListener("mouseout", (e) => {
+    cursor.classList.remove("deco-space");
+    cursor.innerHTML = "";
+  });
+
+  // when hovering over text
+  const text = document.querySelectorAll(".text");
+  for (let i of text) {
+    i.addEventListener("mouseover", (e) => {
+      cursor.classList.add("highlight");
+    });
+
+    i.addEventListener("mouseout", (e) => {
+      cursor.classList.remove("highlight");
+    });
+  }
+
+  // work section hover
+  const workImages = document.querySelectorAll("#work img");
+  workImages.forEach((image) => {
+    image.addEventListener("mouseover", (e) => {
+      cursor.classList.add("expand");
+      cursor.innerHTML = "<span>work</span>";
+    });
+
+    image.addEventListener("mouseout", (e) => {
+      cursor.classList.remove("expand");
+      cursor.innerHTML = "";
+    });
+  });
+
+  // parallax work images
+  window.addEventListener("scroll", (e) => {
+    if (window.screen.width > 800) {
+      let scrollPosition = window.pageYOffset;
+      workImages.forEach((image) => {
+        let scrollRate = image.dataset.rate * (scrollPosition / 4);
+        image.style.transform = `translateY(${scrollRate}px)`;
+      });
+    }
+  });
 });
 
 // render react content

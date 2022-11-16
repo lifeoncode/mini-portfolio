@@ -29,9 +29,14 @@ $orange: rgb(253, 98, 41);
 // default behaviour
 html,
 body,
-section {
-  // background-color: $white;
+section,
+#root {
+  background-color: $white;
   overflow-x: hidden;
+}
+
+#root {
+  position: relative;
 }
 
 // functions
