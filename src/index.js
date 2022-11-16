@@ -17,6 +17,12 @@ window.addEventListener("load", () => {
     }, 1000);
   }, 3000);
 
+  // work section
+  if (window.screen.width < 600) {
+    document.querySelector("#about span").classList.add("show");
+    document.querySelector("#about p").classList.add("show");
+  }
+
   // move cursor
   const cursor = document.querySelector("#cursor");
   window.addEventListener("mousemove", function (e) {
