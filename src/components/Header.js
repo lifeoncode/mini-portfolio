@@ -1,14 +1,7 @@
-const Header = ({ logo, navigation, additional }) => {
+const Header = () => {
   return (
     <header className="header">
-      <div className="container">
-        {/* site logo */}
-        {logo}
-        {/* navigation */}
-        {navigation}
-        {/* account login */}
-        {additional}
-      </div>
+      <div className="container"></div>
     </header>
   );
 };

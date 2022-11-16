@@ -1,14 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
 * {
-  box-sizing: border-box;
+  box-sizing: 0;
   margin: 0;
   padding: 0;
-  font-family: "Roboto Condensed", sans-serif;
+  scroll-behavior: smooth;
+  cursor: none;
+  font-family: "Roboto condensed", sans-serif;
 }
 
+// colors
+$white: rgb(253, 248, 244);
+$black: #141414;
+$beige: rgb(255, 246, 227);
+$darkish-beige: rgb(255, 230, 202);
+$orange: rgb(253, 98, 41);
+
+// scroll bar
+::-webkit-scrollbar {
+  background-color: inherit;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: $orange;
+}
+
+// default behaviour
+html,
+body,
+section {
+  // background-color: $white;
+  overflow-x: hidden;
+}
+
+// functions
 @mixin display-flex($align: center, $justify: center) {
   display: flex;
   align-items: $align;
   justify-content: $justify;
+}
+
+@mixin display-grid($columns: 1fr, $gap: 10px) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-gap: $gap;
+}
+
+h1,
+h2,
+h3,
+.big-text {
+  font-family: "DM serif text", sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 50px;
+
+  @media only screen and (max-width: 850px) {
+    font-size: 40px;
+  }
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.big-text {
+  font-size: 20px;
+
+  @media only screen and (max-width: 850px) {
+    font-size: 18px;
+  }
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.projects-image {
+  position: fixed;
+  width: 88%;
+  margin-left: 6%;
+  height: 100vh;
+  bottom: 0;
+  z-index: -1;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .container {
@@ -18,22 +111,108 @@
   @media only screen and (max-width: 1220px) {
     padding: 0 50px;
   }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0 20px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 0 10px;
+  }
 }
 
-.btn {
-  display: inline-block;
+#cursor {
+  position: absolute;
+  z-index: 5;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: $black;
+  transition: all 0.1s ease-out;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  color: $white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
-  border: 0;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+
+  &.deco-space {
+    height: 50px;
+    width: 50px;
+    background-color: $orange;
+  }
+
+  &.highlight {
+    height: 15px;
+    width: 15px;
+    border: 1px solid $white;
+  }
+
+  &.expand {
+    width: 80px;
+    height: 80px;
+  }
 }
 
-.link {
-  display: inline-block;
-  text-decoration: none;
+section {
+  padding: 100px 0;
 }
 
-h1 {
-  font-size: 50px;
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: $white;
+  transition: all 1s ease;
+  @include display-flex();
+
+  &.page-loaded {
+    opacity: 0;
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  .ball {
+    width: 100px;
+    height: 100px;
+    background-color: $white;
+    border-radius: 50%;
+    animation: swing 2s none linear infinite;
+    overflow: hidden;
+    transform: rotate(-15deg);
+    position: relative;
+
+    .fill {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0;
+      width: 100%;
+      background-color: $orange;
+      animation: fill-up 8s none ease infinite;
+    }
+  }
+}
+
+@keyframes fill-up {
+  80% {
+    height: 100%;
+  }
+}
+
+@keyframes swing {
+  50% {
+    transform: rotate(15deg);
+  }
 }
