@@ -170,23 +170,11 @@
         span {
           font-family: inherit;
           display: inline-block;
-          transition: all 1s ease;
-          transform: translateY(100%);
-
-          &.show {
-            transform: translateY(0);
-          }
         }
       }
 
       p {
         margin: 20px 0;
-        opacity: 0;
-        transition: all 1s ease;
-
-        &.show {
-          opacity: 1;
-        }
       }
     }
   }

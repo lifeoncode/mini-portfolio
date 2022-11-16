@@ -17,12 +17,6 @@ window.addEventListener("load", () => {
     }, 1000);
   }, 3000);
 
-  // about section
-  if (window.screen.width < 600) {
-    document.querySelector("#about span").classList.add("show");
-    document.querySelector("#about p").classList.add("show");
-  }
-
   // move cursor
   const cursor = document.querySelector("#cursor");
   window.addEventListener("mousemove", function (e) {
@@ -72,26 +66,6 @@ window.addEventListener("load", () => {
   // parallax work images
   window.addEventListener("scroll", (e) => {
     let scrollPosition = window.pageYOffset;
-
-    if (window.screen.height >= 430) {
-      if (scrollPosition >= 340) {
-        document.querySelector("#about span").classList.add("show");
-        document.querySelector("#about p").classList.add("show");
-      } else {
-        document.querySelector("#about span").classList.remove("show");
-        document.querySelector("#about p").classList.remove("show");
-      }
-    }
-
-    if (window.screen.height >= 760) {
-      if (scrollPosition >= 450) {
-        document.querySelector("#about span").classList.add("show");
-        document.querySelector("#about p").classList.add("show");
-      } else {
-        document.querySelector("#about span").classList.remove("show");
-        document.querySelector("#about p").classList.remove("show");
-      }
-    }
 
     if (window.screen.width > 800) {
       workImages.forEach((image) => {
