@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Link from "./components/Link";
 import Button from "./components/Button";
-import "./App.scss";
+import "./styles/App.scss";
 
 const App = () => {
   // nav component
