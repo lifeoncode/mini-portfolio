@@ -21,7 +21,17 @@ const App = () => {
     </div>
   );
 
-  return <Header navigation={nav} additional={account} />;
+  return (
+    <>
+      <Header navigation={nav} additional={account} />
+      <section className="hero">
+        <div className="container">
+          <h1>We create state of the art software</h1>
+          <Button text="learn more" />
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default App;

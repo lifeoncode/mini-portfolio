@@ -3,6 +3,11 @@
 
 // the header
 .header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
   padding: 15px;
 
   .container {
@@ -15,8 +20,6 @@
     // nav
     .navigation {
       .link {
-        display: inline-block;
-        text-decoration: none;
         text-transform: uppercase;
         margin: 0 20px;
         color: #141414;
@@ -25,14 +28,8 @@
     // account
     .account {
       .btn {
-        display: inline-block;
-        padding: 10px 15px;
-        border: 0;
-        text-transform: uppercase;
         border-radius: 2px;
-        cursor: pointer;
         margin: 0 10px;
-        transition: all 0.3s ease;
 
         &:last-child {
           margin-right: 0;
@@ -48,5 +45,29 @@
         }
       }
     }
+  }
+}
+
+// the hero
+.hero {
+  padding: 200px 0;
+  text-align: center;
+  background-image: url("../img/jefferson-santos-9SoCnyQmkzI-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: #fff;
+  }
+
+  .btn {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 20px 40px;
+    background-color: #fff;
+    color: #141414;
   }
 }
