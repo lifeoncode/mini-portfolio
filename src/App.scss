@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import "config";
+
+// the header
+.header {
+  padding: 15px;
+
+  .container {
+    @include display-flex($justify: space-between);
+
+    .logo {
+      text-transform: uppercase;
+    }
+
+    // nav
+    .navigation {
+      .link {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin: 0 20px;
+        color: #141414;
+      }
+    }
+    // account
+    .account {
+      .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        border: 0;
+        text-transform: uppercase;
+        border-radius: 2px;
+        cursor: pointer;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &#login {
+          background-color: blue;
+          color: #fff;
+        }
+        &#sign-up {
+          background-color: black;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
