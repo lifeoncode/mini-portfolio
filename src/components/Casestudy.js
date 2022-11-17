@@ -46,7 +46,7 @@ const Casestudy = () => {
           <div className="text">
             <p>
               Yello Garden is a web design and development agency. Their website
-              has ti reflect that they are professionals who know what they are
+              has to reflect that they are professionals who know what they are
               doing. The challenge was to create a website that conveys trust
               and authority to the user.
             </p>
