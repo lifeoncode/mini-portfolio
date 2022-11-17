@@ -25,11 +25,6 @@ const Casestudy = () => {
             className="work-img"
           />
 
-          <img
-            src={require("../img/fastfingers.gif")}
-            alt="fast fingers app"
-            className="work-img"
-          />
           <div className="text">
             <p>
               This is a speed typing practice application. The goal here was to
@@ -41,6 +36,12 @@ const Casestudy = () => {
               <span>Live project</span>
             </a>
           </div>
+
+          <img
+            src={require("../img/fastfingers.gif")}
+            alt="fast fingers app"
+            className="work-img"
+          />
 
           <div className="text">
             <p>
