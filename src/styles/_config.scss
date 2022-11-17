@@ -29,14 +29,9 @@ $orange: rgb(253, 98, 41);
 // default behaviour
 html,
 body,
-section,
-#root {
+section {
   background-color: $white;
   overflow-x: hidden;
-}
-
-#root {
-  position: relative;
 }
 
 // functions
@@ -62,10 +57,12 @@ h3,
 
 h1 {
   font-size: 70px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 h2 {
   font-size: 50px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
   @media only screen and (max-width: 850px) {
     font-size: 40px;
@@ -160,12 +157,17 @@ body {
   }
 
   &.expand {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
+  }
+
+  &.hide {
+    opacity: 0;
   }
 }
 
 section {
+  overflow: hidden;
   padding: 100px 0;
 }
 

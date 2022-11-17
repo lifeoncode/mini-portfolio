@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
   }
 
   // work section hover
-  const workImages = document.querySelectorAll("#work img");
+  const workImages = document.querySelectorAll(".work-img");
   workImages.forEach((image) => {
     image.addEventListener("mouseover", (e) => {
       cursor.classList.add("expand");
@@ -60,6 +60,20 @@ window.addEventListener("load", () => {
     image.addEventListener("mouseout", (e) => {
       cursor.classList.remove("expand");
       cursor.innerHTML = "";
+    });
+  });
+
+  // buttons hover
+  const btns = document.querySelectorAll(".btn");
+  btns.forEach((btn) => {
+    btn.addEventListener("mouseover", () => {
+      cursor.classList.add("expand");
+      cursor.classList.add("hide");
+    });
+
+    btn.addEventListener("mouseout", () => {
+      cursor.classList.remove("expand");
+      cursor.classList.remove("hide");
     });
   });
 
