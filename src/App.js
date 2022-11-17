@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Work from "./components/Work";
 import Casestudy from "./components/Casestudy";
+import Closing from "./components/Closing";
+import Footer from "./components/Footer";
 import "./styles/App.scss";
 
 const App = () => {
@@ -15,6 +17,8 @@ const App = () => {
       <About />
       <Work />
       <Casestudy />
+      <Closing />
+      <Footer />
     </>
   );
 };
